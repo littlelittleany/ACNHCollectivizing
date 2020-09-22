@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <title>page 2</title>
+
+   <style>
+        body {
+            background-image: url(img/acnh.jpg);     
+            height: 100vh;
+            background-size:cover; 
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;  
+
+            align-items: center;   
+        }
+
+        .item { 
+            width: 200px;
+            height: 200px;
+            margin-left: 70px;
+            margin-bottom: 20px;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%; 
+            display: inline-block;
+            padding: 20px;
+            background-color:white;
+        }
+
+        .item :hover {
+            transform: scale(1.3);
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <nav class="ui two item menu">
+        <a href="index.html">My Villegers</a> 
+        <a href="page2.html">Page 2 </a> 
+
+    </nav>
+
+    <div class="container">
+        <div class="item">
+            <img src="img/antonino.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="img/phoebe.png" alt="">
+        </div>
+        <div class="item">
+            <img src="img/portia.png" alt="">
+        </div>
+        <div class="item">
+            <img src="img/drago.png" alt="">
+        </div>
+        <div class="item">
+            <img src="img/raymond.jpeg" alt="">
+        </div>
+        <div class="item">
+            <img src="img/olivia.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="img/drift.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="img/cube.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="img/bluebear.png" alt="">
+        </div>
+        <div class="item">
+            <img src="img/nana.png" alt="">
+        </div>
+    </div>
+
+
+
+<script> //function that pull out the original image when you click on it
+    const items = document.querySelectorAll('.item');
+    items.forEach(item => item.addEventListener('click', (e) => { 
+    let class_name = e.target.parentElement.className;
+    const large = class_name.includes('large');
+    if(!large){
+        e.target.parentElement.className+='large'
+    } else {
+             e.target.parentElement.className='item'
+    }
+
+ }));
+</script>
+
+
+
+<script>
+
+        const numImgs = 10;
+        const imgPaths = Array.from({ length: numImgs });
+        imgPaths.forEach((e,i) => e[i]=`img/${i}.jpeg`);
+        console.log(imgPaths);
+
+
+    </script>
+
+
+</body>
+</html>
